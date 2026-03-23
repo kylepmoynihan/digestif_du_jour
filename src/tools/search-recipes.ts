@@ -27,7 +27,9 @@ export async function handleSearchRecipes(
     name: r.name,
     tags: r.tags,
     addedByName: r.addedByName,
-    ingredientCount: r.ingredients.length,
+    ingredients: r.ingredients.map((i) =>
+      [i.quantity, i.unit, i.name].filter(Boolean).join(" ")
+    ),
     avgRating: r.avgRating,
     reviewCount: r.reviewCount,
   }));
