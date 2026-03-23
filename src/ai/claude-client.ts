@@ -5,7 +5,7 @@ import { executeTool } from "./tool-executor";
 
 const client = new Anthropic();
 
-const MAX_TOOL_ROUNDS = 3;
+const MAX_TOOL_ROUNDS = 5;
 const MAX_HISTORY_MESSAGES = 10;
 
 interface ConversationMessage {
@@ -42,8 +42,8 @@ export async function chat(
     rounds++;
 
     const response = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
-      max_tokens: 1500,
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 1024,
       system: systemPrompt,
       tools,
       messages,
