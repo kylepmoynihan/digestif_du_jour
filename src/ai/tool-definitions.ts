@@ -54,7 +54,7 @@ export const tools: Tool[] = [
   {
     name: "search_recipes",
     description:
-      "Search the recipe database by name, tags, or ingredients. Use this when users ask things like 'show me pasta recipes' or 'what can I make with chicken?'",
+      "Search the recipe database by name, tags, or ingredients. Call with no query or tags to list ALL saved recipes. Results include full ingredient lists, so you can compile a consolidated recipe list from search results alone without needing get_recipe for each one.",
     input_schema: {
       type: "object" as const,
       properties: {
